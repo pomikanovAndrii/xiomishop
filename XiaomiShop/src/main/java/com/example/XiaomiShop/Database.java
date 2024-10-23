@@ -5,6 +5,7 @@ import com.example.XiaomiShop.entity.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Database {
     public static List<Product> products = new ArrayList<>();
 
@@ -31,6 +32,23 @@ public class Database {
     }
 
     public static Product getProductById(int id) {
-        return products.get(id);
+        for(Product product : products)
+            if(product.getId() == id)
+                return products.get(id);
+        return null;
+    }
+
+    public static void saveProduct(Product product) {
+        products.add(product);
+    }
+
+    public static boolean removeProduct(int id) {
+        for(int i = 0; i < products.size(); i++) {
+            if(products.get(i).getId() == id) {
+                products.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 }

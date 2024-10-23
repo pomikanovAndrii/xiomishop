@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/products")
 public class ProductController {
@@ -18,10 +20,12 @@ public class ProductController {
         - видаляти товар
      */
 
-    @GetMapping
-    public String showProducts() {
-        Database.getProducts();
 
+
+    @GetMapping
+    public String allProducts(Model model) {
+        List<Product> productList = Database.getProducts();
+        model.addAttribute("products_list", productList);
         return "products";
     }
 
