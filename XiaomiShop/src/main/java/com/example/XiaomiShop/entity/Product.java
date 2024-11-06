@@ -1,21 +1,27 @@
 package com.example.XiaomiShop.entity;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
 public class Product {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String imageUrl;
     private String title;
     private String characteristics;
     private String description;
     private int cost;
+    @OneToMany
     private List<Review> reviews;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
