@@ -1,16 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-    <title>Додавання нового товару Xiaomi</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-<h1>Додавання нового товару:</h1>
-<form action="#" th:action="@{/products/add-product}" th:object="${product}" method="post">
-    <p>Назва товару: <input type="text" th:field="*{title}" /></p>
-    <p>Опис товару: <input type="text" th:field="*{description}" /></p>
-    <p>Ціна товару: <input type="text" th:field="*{cost}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
-</body>
+    <head>
+        <title>Додавання нового товару Xiaomi</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="../style/add-form.css">
+    </head>
+    <body>
+    <h1>Додавання нового товару:</h1>
+        <form action="#" th:action="@{/products/add-product}" th:object="${product}" method="post" class="product-form">
+            <p>Назва товару: <input type="text" th:field="*{title}" /></p>
+            <p>Опис товару: <input type="text" th:field="*{description}" /></p>
+            <p>Ціна товару: <input type="text" th:field="*{cost}" /></p>
+            <p>Характеристики: <input type="text" th:field="*{characteristics}" /></p>
+            <p>Зображення товару: <input type="text" th:field="*{imageUrl}" /></p>
+            <p>
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </p>
+        </form>
+    </body>
 </html>

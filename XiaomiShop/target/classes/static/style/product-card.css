@@ -1,0 +1,68 @@
+/* Загальні стилі для карточки */
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє карткам переходити на новий рядок, якщо не вміщуються */
+    justify-content: normal;  /* Розподіляє картки рівномірно по рядку */
+    gap: 20px; /* Відступ між картками */
+}
+
+.product-card {
+    width: 200px; /* Ширина карточки */
+    border: 1px solid #ddd; /* Лінія навколо карточки */
+    border-radius: 8px; /* Прямі кути */
+    overflow: hidden; /* Витісняє все, що виходить за межі */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для глибини */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* Білий фон */
+    margin: 10px;
+    padding: 10px;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Стилі для зображення товару */
+.product-image {
+    width: 100%; /* Зображення займає всю ширину контейнера */
+    height: 150px; /* Висота зображення */
+    object-fit: cover; /* Збереження пропорцій зображення */
+}
+
+/* Стилі для інформації про товар */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 10px;
+}
+
+/* Стилі для назви товару */
+.product-info h3 {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Стилі для ціни та іконки видалення */
+.product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* Стилі для іконки видалення */
+.remove-icon img {
+    cursor: pointer; /* Курсор у вигляді руки при наведенні */
+}
+
+/* Стилі для ціни */
+.product-price span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}

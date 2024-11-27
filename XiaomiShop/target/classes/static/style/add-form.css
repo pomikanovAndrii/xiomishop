@@ -1,0 +1,56 @@
+/* Стилі для форми */
+.product-form {
+    width: 300px; /* Встановлюємо ширину форми */
+    margin: 0 auto; /* Вирівнювання по центру */
+    padding: 20px; /* Відступи всередині форми */
+    background-color: #f9f9f9; /* Світло-сірий фон */
+    border-radius: 8px; /* Закруглені кути */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь для глибини */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
+
+/* Стилі для заголовків і полів вводу */
+.product-form p {
+    font-size: 14px; /* Розмір шрифту */
+    margin-bottom: 10px; /* Відступ між полями */
+}
+
+.product-form input[type="text"] {
+    width: 100%; /* Ширина поля вводу займає всю доступну ширину */
+    padding: 8px; /* Внутрішні відступи */
+    margin-top: 5px; /* Відступ зверху */
+    font-size: 14px; /* Розмір шрифту */
+    border: 1px solid #ccc; /* Сірий колір рамки */
+    border-radius: 4px; /* Закруглені кути полів */
+    box-sizing: border-box; /* Для врахування padding в розмірах */
+}
+
+.product-form input[type="text"]:focus {
+    border-color: #007bff; /* Синій колір рамки при фокусуванні */
+    outline: none; /* Прибираємо стандартну обводку */
+}
+
+/* Стилі для кнопок */
+.product-form input[type="submit"], .product-form input[type="reset"] {
+    padding: 10px 15px; /* Внутрішні відступи кнопок */
+    font-size: 16px; /* Розмір шрифту */
+    margin-top: 10px; /* Відступ від попереднього елемента */
+    border: none; /* Без рамки */
+    background-color: #007bff; /* Синій фон для кнопки Submit */
+    color: white; /* Білий текст */
+    border-radius: 4px; /* Закруглені кути */
+    cursor: pointer; /* Курсор у вигляді руки */
+}
+
+.product-form input[type="submit"]:hover {
+    background-color: #0056b3; /* Темніший колір при наведенні */
+}
+
+.product-form input[type="reset"] {
+    background-color: #f0f0f0; /* Світло-сірий фон для кнопки Reset */
+    color: #333; /* Темний текст */
+}
+
+.product-form input[type="reset"]:hover {
+    background-color: #e0e0e0; /* Темніший колір при наведенні */
+}

@@ -3,18 +3,31 @@
 <head>
     <title>Список товарів</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style/product-card.css">
 </head>
 <body>
     <a href="/products/add-product"><h3>Додати новий товар</h3></a>
     <h1> Список доступних товарів</h1>
-
-    <div th:each="product :  ${products_list}">
-        <a th:href="@{/products/{id}(id=${product.id})}">
-            <h2 th:text="|Назва товару: ${product.title}|"></h2>
-        </a>
-        <h4 th:text="|Ціна товару: ${product.cost} грн.|"></h4>
-        <a th:href="@{/products/remove(id=${product.id})}"><img src="https://cdn-icons-png.flaticon.com/512/54/54324.png" width="30px"></a>
+    <div class="products-container">
+        <div th:each="product : ${products_list}" class="product-card">
+            <a th:href="@{/products/{id}(id=${product.id})}">
+                <img th:if="${product.imageUrl != null}" th:src="@{${product.imageUrl}}" alt="Product Image" class="product-image">
+                <img th:unless="${product.imageUrl != null}" src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" alt="Product Image" class="product-image">
+            </a>
+            <div class="product-info">
+                <a th:href="@{/products/{id}(id=${product.id})}">
+                    <h3 th:text="${product.title}"></h3>
+                </a>
+                <div class="product-price">
+                    <span th:text="${product.cost} + ' грн.'"></span>
+                    <a th:href="@{/products/remove(id=${product.id})}" class="remove-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/54/54324.png" width="20px" alt="Remove">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 </body>
 </html>
