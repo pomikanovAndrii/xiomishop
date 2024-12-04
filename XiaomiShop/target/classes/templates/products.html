@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="style/product-card.css">
 </head>
 <body>
-    <a href="/products/add-product"><h3>Додати новий товар</h3></a>
+    <a href="/products/add-product"><button class="button button1">Додати новий товар</button></a>
     <h1> Список доступних товарів</h1>
     <div class="products-container">
         <div th:each="product : ${products_list}" class="product-card">
             <a th:href="@{/products/{id}(id=${product.id})}">
-                 <img th:if="${product.imageUrl != null}" th:src="@{${product.imageUrl}}" alt="Product Image" class="product-image">
+                <img th:if="${product.imageUrl != null}" th:src="@{${product.imageUrl}}" alt="Product Image" class="product-image">
                 <img th:unless="${product.imageUrl != null}" src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" alt="Product Image" class="product-image">
             </a>
             <div class="product-info">
@@ -28,6 +28,32 @@
         </div>
     </div>
 
+    <style>
+        .button {
+          background-color: #4CAF50; /* Зеленый */
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+        }
+
+        .button1 {
+          background-color: white;
+          color: black;
+          border: 2px solid #4CAF50;
+        }
+
+        .button1:hover {
+          background-color: #4CAF50;
+          color: white;
+        }
+    </style>
 
 </body>
 </html>

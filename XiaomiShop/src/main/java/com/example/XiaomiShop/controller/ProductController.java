@@ -1,6 +1,7 @@
 package com.example.XiaomiShop.controller;
 
 import com.example.XiaomiShop.entity.Product;
+import com.example.XiaomiShop.entity.Review;
 import com.example.XiaomiShop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,7 @@ public class ProductController {
     public String showProduct(@PathVariable Long id, Model model) {
         Product product = service.findProductById(id);
         model.addAttribute("product",product);
+        model.addAttribute("newReview", new Review());
         return "product-info";
     }
 

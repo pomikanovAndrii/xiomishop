@@ -3,11 +3,75 @@
 <head>
     <title th:text="|${product.title}|"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 30%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        a {
+            text-align: center;
+            font-size: 1em;
+            color: #007BFF;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h2 th:text="|Назва товару: ${product.title}|"></h2>
+    <img th:if="${product.imageUrl != null}" th:src="@{${product.imageUrl}}" alt="Product Image">
+    <img th:unless="${product.imageUrl != null}" src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" alt="Product Image" >
     <p th:text="|Опис товару: ${product.description}|"></p>
     <h4 th:text="|Ціна товару: ${product.cost} грн.|"></h4>
     <a href="/products">До списку товарів</a>
+
+    <h2>Відгуки:</h2>
+    <form action="#" th:action="" th:object="${newReview}" method="post">
+        <input type="text" th:field="*{author}">
+        <h3>☆☆☆☆☆</h3>
+        <textarea th:field="*{text}"></textarea> <br>
+        <button type="submit">Відправити</button>
+    </form>
 </body>
 </html>
